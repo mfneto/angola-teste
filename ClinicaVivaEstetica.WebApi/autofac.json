@@ -1,0 +1,21 @@
+﻿{
+  "defaultAssembly": "ClinicaVivaEstetica.Infrastructure",
+  "modules": [
+    {
+      "type": "ClinicaVivaEstetica.Infrastructure.Modules.WebApiModule",
+      "properties": {
+      }
+    },
+    {
+      "type": "ClinicaVivaEstetica.Infrastructure.Modules.ApplicationModule",
+      "properties": {
+      }
+    },
+    {
+      "type": "ClinicaVivaEstetica.Infrastructure.Modules.InfrastructureModule",
+      "properties": {
+        "SQLServerConnectionString": "Data Source=(local);Initial Catalog=ClinicaVivaEsteticaDB;Integrated Security=True;"
+      }
+    }
+  ]
+}

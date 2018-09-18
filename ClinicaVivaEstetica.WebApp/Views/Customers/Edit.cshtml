@@ -1,0 +1,52 @@
+﻿@model CustomerResult
+
+@{
+    ViewBag.Title = "Editar Cliente";
+    Layout = "_Layout";
+}
+
+<div class="table-responsive">
+    <h4 class="text-muted">Editando Cliente: @Model.Name</h4>
+    <br />
+    <br />
+    @using (Html.BeginForm("Edit", "Customers", FormMethod.Post, new { role = "form" }))
+    {
+        @Html.HiddenFor(model => model.CustomerId)
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.Name)
+            @Html.TextBoxFor(model => model.Name, new { @class = "form-control" })
+            <p class="help-block">@Html.ValidationMessageFor(m => m.Name)</p>
+        </div>
+        <br />
+        <div class="form-group">
+            @Html.LabelFor(model => model.LastName)
+            @Html.TextBoxFor(model => model.LastName, new { @class = "form-control" })
+            <p class="help-block">@Html.ValidationMessageFor(m => m.LastName)</p>
+        </div>
+        <br />
+        <div class="form-group">
+            @Html.LabelFor(model => model.Document)
+            @Html.TextBoxFor(model => model.Document, new { @class = "form-control" })
+            <p class="help-block">@Html.ValidationMessageFor(m => m.Document)</p>
+        </div>
+        <br />
+        <div class="form-group">
+            @Html.LabelFor(model => model.Celphone)
+            @Html.TextBoxFor(model => model.Celphone, new { @class = "form-control" })
+            <p class="help-block">@Html.ValidationMessageFor(m => m.Celphone)</p>
+        </div>
+        <br />
+        <div class="form-group">
+            @Html.LabelFor(model => model.Address)
+            @Html.TextBoxFor(model => model.Address, new { @class = "form-control" })
+            <p class="help-block">@Html.ValidationMessageFor(m => m.Address)</p>
+        </div>
+        <br />
+        <div>
+            <button type="button" class="btn btn-default" onclick="javascript:window.history.go(-1);">Voltar</button>
+            <button type="submit" class="btn bg-primary">Editar</button>
+        </div>
+
+    }
+</div>

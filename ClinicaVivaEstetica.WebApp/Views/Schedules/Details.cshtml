@@ -1,0 +1,51 @@
+﻿@using System.Globalization
+@using System.Linq;
+@model List<ScheduleResult>
+@{
+    var culturePt = new CultureInfo("pt-BR");
+}
+<div class="table-responsive">
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th style="width: 15%">Dia</th>
+                <th style="width: 15%">Horario</th>
+                <th style="width: 25%">Cliente</th>
+                <th style="width: 25%">Serviço</th>
+                <th style="width: 20%"></th>
+            </tr>
+        </thead>
+        <tbody>
+            @if (Model?.Any() == true)
+            {
+                foreach (ScheduleResult schedule in Model)
+                {
+                    <tr>
+                        <td>@schedule.Day.ToString("dd/MM/yyyy", culturePt)</td>
+                        <td>@schedule.Hour.ToString(@"hh\:mm")</td>
+                        <td>@schedule.Customer.Name</td>
+                        <td>@schedule.Service.Name</td>
+                        @if (DateTime.Compare(schedule.Day.AddDays(-1), DateTime.Now) > 0)
+                        {
+                            <td>
+
+                                <a class="grid-action-link" href="/Schedules/Edit/@schedule.ScheduleId"><i class="glyphicon glyphicon-pencil text-dark"></i></a> |
+                                <a class="grid-action-link" href="#" data-href="/Schedules/Delete/@schedule.ScheduleId" data-toggle="modal" data-target="#confirm-delete"><i class="glyphicon glyphicon-remove text-danger"></i></a>
+
+                            </td>
+                        }
+                        else
+                        {
+                            <td>Menos de 24hs do horário agendado</td>
+                        }
+
+                    </tr>
+                }
+            }
+            else
+            {
+                <tr *ngIf="users.length === 0"><td colspan="5" style="text-align: center">Nenhum registro encontrado!</td></tr>
+            }
+        </tbody>
+    </table>
+</div>

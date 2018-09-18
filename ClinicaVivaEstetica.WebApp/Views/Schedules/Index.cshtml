@@ -1,0 +1,22 @@
+﻿@model List<ClinicaVivaEstetica.WebApp.Models.ScheduleResult>
+
+@{
+    ViewBag.Title = "Agendamentos";
+    Layout = "_Layout";
+}
+
+
+<div class="row flex-xl-nowrap">
+    <div class="col-lg-12">
+        <h1 class="display-4">Agendamentos</h1>
+        <p class="lead">Mantenha os agendamentos da clínica!</p>
+    </div>
+    <br /><br />
+    <div class="col-lg-12">
+        <p>
+            <a class="btn btn-primary" href="/Schedules/Create" role="button">Novo</a>
+        </p>
+        @Html.Partial("Details", Model)
+    </div>
+</div>
+

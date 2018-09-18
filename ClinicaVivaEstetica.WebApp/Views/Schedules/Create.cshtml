@@ -1,0 +1,48 @@
+﻿@model ScheduleViewModel
+
+@{
+    ViewBag.Title = "Criar Agendamento";
+    Layout = "_Layout";
+}
+
+<div class="table-responsive">
+    <h4 class="text-muted">Criando um Agendamento</h4>
+    <br />
+    <br />
+    @using (Html.BeginForm("Create", "Schedules", FormMethod.Post, new { role = "form" }))
+    {
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+
+        @Html.Hidden("HalfServices", String.Join(",", ((List<ServiceResult>)ViewBag.EntityServices).Where(w => w.AllowHalfTime).Select(s => s.ServiceId)))
+        <div class="form-group">
+            @Html.LabelFor(model => model.Day)
+            @Html.TextBoxFor(model => model.Day, new { @class = "form-control datepicker" })
+            <p class="help-block">@Html.ValidationMessageFor(m => m.Day)</p>
+        </div>
+        <br />
+        <div class="form-group">
+            @Html.LabelFor(model => model.ServiceId)
+            @Html.DropDownListFor(model => model.ServiceId, (IEnumerable<SelectListItem>)ViewBag.Services, "Selecione o Serviço", new { @class = "form-control service" })
+            <p class="help-block">@Html.ValidationMessageFor(m => m.ServiceId)</p>
+        </div>
+        <br />
+        <div class="form-group">
+            @Html.LabelFor(model => model.Hour)
+            @Html.DropDownListFor(model => model.Hour, (IEnumerable<SelectListItem>)ViewBag.Hours, "Selecione o horário", new { @class = "form-control hour" })
+            @Html.DropDownListFor(model => model.Hour, (IEnumerable<SelectListItem>)ViewBag.HalfHours, "Selecione o horário", new { @class = "form-control half-hour" })
+            <p class="help-block">@Html.ValidationMessageFor(m => m.Hour)</p>
+        </div>
+        <br />
+        <div class="form-group">
+            @Html.LabelFor(model => model.CustomerId)
+            @Html.DropDownListFor(model => model.CustomerId, (IEnumerable<SelectListItem>)ViewBag.Customers, "Selecione o Cliente", new { @class = "form-control" })
+            <p class="help-block">@Html.ValidationMessageFor(m => m.CustomerId)</p>
+        </div>
+
+        <br />
+        <div>
+            <button type="button" class="btn btn-default" onclick="javascript:window.history.go(-1);">Voltar</button>
+            <button type="submit" class="btn bg-primary">Cadastrar</button>
+        </div>
+    }
+</div>

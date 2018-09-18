@@ -1,0 +1,22 @@
+﻿@model List<ClinicaVivaEstetica.WebApp.Models.CustomerResult>
+
+@{
+    ViewBag.Title = "Clientes";
+    Layout = "_Layout";
+}
+
+
+<div class="row flex-xl-nowrap">
+    <div class="col-lg-12">
+        <h1 class="display-4">Clientes</h1>
+        <p class="lead">Mantenha os clientes da clínica!</p>
+    </div>
+    <br /><br />
+    <div class="col-lg-12">
+        <p>
+            <a class="btn btn-primary" href="/Customers/Create" role="button">Novo</a>
+        </p>
+        @Html.Partial("Details", Model)
+    </div>
+</div>
+

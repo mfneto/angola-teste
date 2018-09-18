@@ -1,0 +1,33 @@
+﻿@model ServiceResult
+
+@{
+    ViewBag.Title = "Editar Serviço";
+    Layout = "_Layout";
+}
+
+<div class="table-responsive">
+    <h4 class="text-muted">Editando o Serviço: Model?.Name</h4>
+    <br />
+    <br />
+    @using (Html.BeginForm("Edit", "Services", FormMethod.Post, new { role = "form" }))
+    {
+        @Html.HiddenFor(model => model.ServiceId)
+        <div class="form-group">
+            @Html.LabelFor(model => model.Name)
+            @Html.TextBoxFor(model => model.Name, new { @class = "form-control" })
+            <p class="help-block">@Html.ValidationMessageFor(m => m.Name)</p>
+        </div>
+        <br />
+        <div class="form-group">
+            @Html.LabelFor(model => model.AllowHalfTime)
+            @Html.CheckBoxFor(model => model.AllowHalfTime, new { @class = "form-control" })
+        </div>
+
+        <br />
+        <div>
+            <button type="button" class="btn btn-default" onclick="javascript:window.history.go(-1);">Voltar</button>
+            <button type="submit" class="btn bg-primary">Editar</button>
+        </div>
+
+    }
+</div>

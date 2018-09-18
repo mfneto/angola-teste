@@ -1,0 +1,73 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>ClinicaVivaEstetica.WebApi</name>
+    </assembly>
+    <members>
+        <member name="M:ClinicaVivaEstetica.WebApi.Controllers.Customer.Create.CustomersController.Post(ClinicaVivaEstetica.WebApi.Model.CreateCustomerRequest)">
+            <summary>
+            Cria um cliente.
+            </summary>
+        </member>
+        <member name="M:ClinicaVivaEstetica.WebApi.Controllers.Customer.Delete.CustomersController.Delete(System.Guid)">
+            <summary>
+            Deleta um cliente.
+            </summary>
+        </member>
+        <member name="M:ClinicaVivaEstetica.WebApi.Controllers.Customer.Get.CustomersController.Get(System.Nullable{System.Guid})">
+            <summary>
+            Obtem um ou vários cliente(s).
+            </summary>
+        </member>
+        <member name="M:ClinicaVivaEstetica.WebApi.Controllers.Customer.Update.CustomersController.Update(ClinicaVivaEstetica.WebApi.Model.UpdateCustomerRequest)">
+            <summary>
+            Atualiza um cliente.
+            </summary>
+        </member>
+        <member name="M:ClinicaVivaEstetica.WebApi.Controllers.Schedule.Create.SchedulesController.Post(ClinicaVivaEstetica.WebApi.Model.CreateScheduleRequest)">
+            <summary>
+            Cria um agendamento.
+            </summary>
+        </member>
+        <member name="M:ClinicaVivaEstetica.WebApi.Controllers.Schedule.Delete.SchedulesController.Delete(System.Guid)">
+            <summary>
+            Deleta um agendamento.
+            </summary>
+        </member>
+        <member name="M:ClinicaVivaEstetica.WebApi.Controllers.Schedule.Get.SchedulesController.Get(System.Nullable{System.Guid})">
+            <summary>
+            Obtem um ou vários agendamento(s).
+            </summary>
+        </member>
+        <member name="M:ClinicaVivaEstetica.WebApi.Controllers.Schedule.Update.SchedulesController.Update(ClinicaVivaEstetica.WebApi.Model.UpdateScheduleRequest)">
+            <summary>
+            Atualiza um agendamento.
+            </summary>
+        </member>
+        <member name="M:ClinicaVivaEstetica.WebApi.Controllers.Schedule.Validate.SchedulesController.Validate(System.DateTime,System.TimeSpan,System.Nullable{System.Guid})">
+             <summary>
+            Existe agendamento na Data?.
+             </summary>
+        </member>
+        <member name="M:ClinicaVivaEstetica.WebApi.Controllers.Service.Create.ServicesController.Post(ClinicaVivaEstetica.WebApi.Model.CreateServiceRequest)">
+            <summary>
+            Cria um serviço.
+            </summary>
+        </member>
+        <member name="M:ClinicaVivaEstetica.WebApi.Controllers.Service.Delete.ServicesController.Delete(System.Guid)">
+            <summary>
+            Deleta um serviço.
+            </summary>
+        </member>
+        <member name="M:ClinicaVivaEstetica.WebApi.Controllers.Service.Get.ServicesController.Get(System.Nullable{System.Guid})">
+            <summary>
+            Obtem um ou vários serviço(s).
+            </summary>
+        </member>
+        <member name="M:ClinicaVivaEstetica.WebApi.Controllers.Service.Update.ServicesController.Update(ClinicaVivaEstetica.WebApi.Model.UpdateServiceRequest)">
+            <summary>
+            Atualiza um serviço.
+            </summary>
+        </member>
+    </members>
+</doc>

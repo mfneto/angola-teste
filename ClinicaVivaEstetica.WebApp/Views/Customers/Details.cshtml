@@ -1,0 +1,37 @@
+﻿@using System.Linq;
+@using ClinicaVivaEstetica.WebApp.Models;
+@model List<CustomerResult>
+
+<div class="table-responsive">
+    <table class="table table-striped">
+        <thead>
+        <tr>
+            <th style="width: 26%">Nome</th>
+            <th style="width: 15%">Documento</th>
+            <th style="width: 15%">Celular</th>
+            <th style="width: 25%"></th>
+        </tr>
+        </thead>
+        <tbody>
+        @if (Model?.Any() == true)
+        {
+            foreach (CustomerResult custumer in Model)
+            {
+                <tr>
+                    <td>@custumer.Name</td>
+                    <td>@custumer.Document</td>
+                    <td>@custumer.Celphone</td>
+                    <td>
+                        <a class="grid-action-link" href="/Customers/Edit/@custumer.CustomerId"><i class="glyphicon glyphicon-pencil text-dark"></i></a> |
+                        <a class="grid-action-link" href="#" data-href="/Customers/Delete/@custumer.CustomerId" data-toggle="modal" data-target="#confirm-delete"><i class="glyphicon glyphicon-remove text-danger"></i></a>
+                    </td>
+                </tr>
+            }
+        }
+        else
+        {
+            <tr *ngIf="users.length === 0"><td colspan="4" style="text-align: center">Nenhum registro encontrado!</td></tr>
+        }
+        </tbody>
+    </table>
+</div>
