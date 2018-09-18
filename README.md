@@ -8,7 +8,11 @@ Estes fontes tem como objetivo, comprovação técnica para vaga na Angola.
 
 Apeanas ajustar as :portas dos hosts dos 'projetos Web' para rodar a aplicação.
 
+* Utilização do Bootstrap
+* Layout Responsivo
+* Comunicação pra WebApi (Front apenas).
 
+- A Utiização do padrão arquitetural para a WebApi (narrada abaixo), poderia ser as camadas/padrão utilizado pro MVC.
 
 ## Web API - Clinica Estética Viva.
 
