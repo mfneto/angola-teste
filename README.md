@@ -1,12 +1,12 @@
-## Teste para vaga na angola - Clinica Estética Viva.
+## Teste para vaga na Angola - Clinica Estética Viva.
 
-Estes fontes tem como objetivo, comprovação técnica para vaga na angole.
+Estes fontes tem como objetivo, comprovação técnica para vaga na Angola.
 
 
 
 ## MVC 5 - Razor Aplication.
 
-Apeanas ajustar as portas dos projetos Web para rodar a aplicação.
+Apeanas ajustar as :portas dos hosts dos 'projetos Web' para rodar a aplicação.
 
 
 
